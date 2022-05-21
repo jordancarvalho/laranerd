@@ -3,20 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Services\PagesServices;
+use Inertia\Inertia;
 
 class PagesController extends Controller
 {
 
-    private PagesServices $Pages;
+    public pagesServices $pages;
 
-    public function __construct(PagesServices $PagesServices)
+    public function __construct(PagesServices $pagesServices)
     {
-        $this->Pages = $PagesServices;
+        $this->pages = $pagesServices;
 
     }
 
     public function index() {
 
+        Inertia::render('Test/Index');
     }
 
 }
